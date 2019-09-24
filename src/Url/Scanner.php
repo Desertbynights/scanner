@@ -33,6 +33,7 @@ class Scanner
         $invalidUrls = [];
         foreach ($this->urls as $url) {
             try {
+                 $statusCode = $this->getStatusCodeForUrl($url);
                 $this->getStatusCodeForUrl($url);
             } catch (\Exception $e) {
                 $statusCode = 500;
